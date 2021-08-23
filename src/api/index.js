@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'http://topi.test/api/meal'
+    baseURL: 'https://secure-savannah-26896.herokuapp.com/api/meal'
 })
 
 export const get = async (search = '', setMeal, setError, handleToggle) => {
