@@ -6,7 +6,7 @@ export const api = axios.create({
 
 export const get = async (search = '', setMeal, setError, handleToggle) => {
     const response = await api.get(`?s=${search}`);
-    if (response.status === 200) {
+    if (response.data.meals === null) {
         setMeal(response.data.meals);
     } else {
         setError(true);
