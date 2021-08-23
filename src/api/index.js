@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://secure-savannah-26896.herokuapp.com/api/meal'
+    baseURL: 'https://www.themealdb.com/api/json/v1/1/search.php'
 })
 
 export const get = async (search = '', setMeal, setError, handleToggle) => {
-    const response = await api.get(`/${search}`);
+    const response = await api.get(`?s=${search}`);
     if (response.status === 200) {
         setMeal(response.data.meals);
     } else {
